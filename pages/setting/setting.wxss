@@ -1,0 +1,52 @@
+/* pages/setting/setting.wxss */
+/*背景*/
+.background{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/*标题标签*/
+.myLab{
+  width: 96%;
+  height: 60rpx;
+  margin: 30rpx 2% 0 2%;
+  size: 60rpx;
+  color:#444;
+}
+
+/*弹窗*/
+.myModal{
+  width: 560rpx;
+  height: 560rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  margin: 340rpx 100rpx 100rpx 80rpx;
+  z-index: 10;
+  border: 1rpx solid #bbb;
+  box-shadow: 10rpx 10rpx 30rpx #888;
+}
+
+/*输入框*/
+.myInput{
+  width: 96%;
+  height: 60rpx;
+  background-color: #444;
+  border: 1rpx solid #000;
+  color: #fff;
+  margin: 10rpx 2% 10rpx 2%;
+}
+
+/*按钮*/
+.mybt{
+  width: 20%;
+  height: 70rpx;
+  background-color: #444;
+  border: 1rpx solid #fff;
+  size: 48rpx;
+  color: #fff;
+  margin: 0 2% 0 2%;
+}

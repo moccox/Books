@@ -1,0 +1,32 @@
+/* pages/search/search.wxss */
+/*背景*/
+.background{
+  width: 100%;
+  height: 1000rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+/*滚动页面*/
+.myScroll{
+  width: 98%;
+  height: 400rpx;
+  background-color: rgb(224, 224, 224);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10rpx 1% 0 1%;
+}
+
+/*项目区域*/
+.item{
+  width: 96%;
+  height: 280rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10rpx 2% 10rpx 2%;
+  border-radius: 30rpx;
+}
+

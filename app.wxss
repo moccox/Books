@@ -1,0 +1,95 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+/*图标*/
+/*项目地址*/
+@font-face {
+  font-family: 'iconfont';  /* project id 1023459 */
+  src: url('//at.alicdn.com/t/font_1023459_neis4965yjk.eot');
+  src: url('//at.alicdn.com/t/font_1023459_neis4965yjk.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1023459_neis4965yjk.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1023459_neis4965yjk.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1023459_neis4965yjk.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1023459_neis4965yjk.svg#iconfont') format('svg');
+}
+
+/*图标格式*/
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:60rpx;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/*图标编码*/
+.icon-location_false::before{ /*定位*/
+  content: '\e655';
+}
+.icon-location_true::before{  /*定位-实心*/
+  content: '\e654';
+}
+.icon-integral_false::before{ /*积分*/
+  content: '\e64a';
+}
+.icon-integral_true::before{  /*积分-实心*/
+  content: '\e649';
+}
+.icon-love_false::before{ /*爱心*/
+  content: '\e634';
+}
+.icon-love_true::before{  /*爱心-实心*/
+  content: '\e635';
+}
+.icon-collection_false::before{ /*收藏*/
+  content: '\e632'；
+}
+.icon-collection_true::before{  /*收藏-实心*/
+  content: '\e633';
+}
+.icon-an::before{ /*下拉*/
+  content: '\e662';
+}
+.icon-pack::before{ /*收起*/
+  content: '\e600';
+}
+.icon-right::before{  /*右-可表示前往其他页面*/
+  content: '\e64c'
+}
+.icon-right_large::before{  /*带圆圈的右*/
+  content: '\e663'
+}
+.icon-left::before{ /*左-可表示返回*/
+  content: '\e64b';
+}
+.icon-like_false::before{ /*点赞*/
+  content: '\e63a';
+}
+.icon-like_true::before{  /*点赞-实心*/
+  content: '\e639';
+}
+.icon-totop::before{  /*返回顶端*/
+  content: '\e637';
+}
+.icon-search::before{ /*搜索*/
+  content: '\e638';
+}
+.icon-books::before{  /*书籍*/
+  content:'\e65a';
+}
+.icon-messages::before{ /*消息*/
+  content:'\e618';
+}
+.icon-delete::before{ /*删除*/
+  content: '\e636';
+}
+.icon-detail::before{ /*详情*/
+  content: '\e6ba';
+}

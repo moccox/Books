@@ -1,0 +1,46 @@
+<!--pages/person/person.wxml-->
+<view style='width:100%;height:1111rpx;display:flex;flex-direction:column'>
+  
+  <!-- 上半部分背景 -->
+  <view class='bg_top'>
+    <!-- 用户登录 -->
+    <button wx:if='{{hasInfoFlag==false}}' class='loginbt' bindtap='getUserInfo' open-type='getUserInfo'>请登录</button>
+    <view wx:if='{{hasInfoFlag==true}}' class='name'>欢迎，{{userName}}</view>
+  </view>
+  
+  <!-- 下半部分背景 -->
+  <view class='bg_bottom'>
+    <!-- 个人信息 -->
+    <view class='myTap' style='margin-top:20rpx'>
+      <label class='myLab_one'>个人信息</label>
+      <icon class="{{personalFlag?'iconfont icon-pack':'iconfont icon-an'}}" style='color:#1995f4;margin-left:440rpx;margin-top:10rpx' bindtap='changePsFlag'></icon>
+    </view>
+    <!--个人信息-子列表-->
+    <view class="{{personalFlag?'personalView':'personalView_hidden'}}">
+      <!--爱心值-->
+      <view class='myTap' style='margin-top:2rpx;border-bottom:2rpx solid #ccc' bindtap='showLove'>
+        <icon class="{{integralFlag?'iconfont icon-integral_true':'iconfont icon-integral_false'}}" style='margin-left:30rpx;margin-top:10rpx;color:#ff9907' wx:if='{{personalFlag}}' bindtap='showLove'></icon>
+        <label class='myLab_two' wx:if='{{personalFlag}}' bindtap='showLove'>爱心值</label>
+        <label class='myLab_two' style='margin-left:230rpx;opacity:0;' wx:if='{{personalFlag}}' animation='{{slideR_1}}'>{{integral}}</label>
+      </view>
+      <!--我的赠书和心愿-->
+      <view class='myTap' style='border-bottom:2rpx solid #ccc' bindtap='goToMybk'>
+        <icon class="iconfont icon-books" style='margin-left:30rpx;margin-top:10rpx;color:#ff9907' wx:if='{{personalFlag}}'></icon>
+        <label class='myLab_two' wx:if='{{personalFlag}}'>我的书籍</label>
+        <icon class='iconfont icon-right' style='margin-left:330rpx;margin-top:10rpx;color:#aaa' wx:if='{{personalFlag}}'></icon>
+      </view>
+      <!--消息-->
+      <view class='myTap' style='border-bottom:2rpx solid #ccc' bindtap='goToMyms'>
+        <icon class='iconfont icon-messages' style='margin-left:30rpx;margin-top:10rpx;color:#ff9907' wx:if='{{personalFlag}}'></icon>
+        <label class='myLab_two' wx:if='{{personalFlag}}'>我的消息</label>
+        <icon class='iconfont icon-right' style='margin-left:330rpx;margin-top:10rpx;color:#aaa' wx:if='{{personalFlag}}'></icon>
+      </view>
+    </view>
+
+    <!-- 设置 -->
+    <view class='myTap' style='margin-top:20rpx'>
+      <label class='myLab_one'>设置</label>
+      <icon class='iconfont icon-right_large' style='color:#1995f4;margin-left:510rpx;margin-top:10rpx' bindtap='goToSetting'></icon>
+    </view>
+  </view>
+</view>

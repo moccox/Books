@@ -1,0 +1,39 @@
+<!--pages/wish/wish.wxml-->
+<view style='width:100%'>
+  <form bindsubmit='finishForm'>
+    <!-- 书籍信息 -->
+    <label class='myLab'>书籍名称：</label>
+    <input class='myInput' style='' type='text' confirm-type='next' name='book'></input>
+    <label class='myLab'>书籍作者：</label>
+    <input class='myInput' type='text' name='author'></input>
+
+    <!-- 悬赏区域 -->
+    <!-- 悬赏开关区域 -->
+    <view class='myTap'>
+      <view class='labView'>
+        <label>悬赏</label>
+        <label style='color:#aaa;font-size:30rpx'>启用悬赏后，将消耗相应爱心值许愿</label>
+      </view>
+      <switch type='switch' color='#1995f4' bindchange='changeRwFlag'></switch>
+    </view>
+
+    <!-- 悬赏值填写区域 -->
+    <view class="{{rewardFlag?'rewardView':'rewardView_hidden'}}">
+      <label style='color:#1995f4;margin:30rpx 30rpx 30rpx 30rpx'>请选择悬赏的爱心值（最多为5）</label>
+      <view style='width:100%;display:flex;flex-direction:row;margin-left:30rpx'>
+        <!--实心爱心-->
+        <block wx:for='{{trueLove}}' wx:key='{{index}}'>
+          <icon class='iconfont icon-love_true' catchtap='inLove' id='{{index+1}}' data-in='reduce' style="color:#f66" wx:if="{{rewardFlag}}"></icon>
+        </block>
+        <!--空心爱心-->
+        <block wx:for='{{falseLove}}' wx:key='{{index}}'>
+          <icon class='iconfont icon-love_false' catchtap='inLove' id='{{index+1}}' data-in='add' style="color:#f88" wx:if="{{rewardFlag}}"></icon>
+        </block>
+        <!--清空按钮-->
+        <button type='defaul' size='mini' style='margin-left:90rpx' bindtap='clearLove' wx:if='{{rewardFlag}}'>清空</button>
+      </view>
+    </view>
+    <button class='mybt' form-type='submit' style='color:#fff;background-color:#1995f4;'>许愿</button>
+    <button class='mybt' form-type='reset' bindtap='clearAll' style='color:#1995f4'>取消</button>
+  </form>
+</view>

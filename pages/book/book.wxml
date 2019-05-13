@@ -1,0 +1,28 @@
+<!--pages/book/book.wxml-->
+<view class='background'>
+  <form bindsubmit='finishForm'>
+    <!-- 上传图片 -->
+    <label class='myLab'>上传封面图片：</label>
+    <view class='picturePreBox'>
+      <image src='{{imageSrc}}' class='picturePre'></image>
+      <view class="{{imageSrc!=''?'':'hidden'}}">
+        <icon type='clear' size='20' color='red' bindtap='clearImageSrc'></icon>
+      </view>
+      <button class='addPictureBt' bindtap='addPicture'>+</button>
+    </view>
+
+    <!-- 上传文本 -->
+    <view class='textBox'>
+        <label class='myLab' style='margin-top:640rpx;opacity:0' animation="{{slideU_1}}">书籍名称：</label>
+        <input class='myInput' style='opacity:0' type='text' confirm-type='next' name='book' animation="{{slideU_2}}"></input>
+        <label class='myLab' style='opacity:0' animation="{{slideU_3}}">书籍作者：</label>
+        <input class='myInput' style='opacity:0' type='text' name='author' animation="{{slideU_4}}"></input>
+    </view>
+  
+    <!-- 按钮区域 -->
+    <view class='buttonBox'>
+      <button style='background-color:#1995f4;color:#fff;opacity:0' class='myBt' form-type='submit' animation="{{slideU_5}}">发布</button>
+      <button type='defaul' style='color:#1995f4;opacity:0' class='myBt' bindtap='clearImageSrc' form-type='reset' animation="{{slideU_6}}">取消</button>
+    </view>
+  </form>
+</view>

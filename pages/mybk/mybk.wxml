@@ -1,0 +1,24 @@
+<!--pages/mybk/mybk.wxml-->
+<view class='background'>
+  <!--赠书列表-->
+  <view style='margin:20rpx 0 20rpx 20rpx;font-size:30rpx'>我的赠书：</view>
+  <scroll-view scroll-y class='myScroll'>
+    <block wx:for='{{mysend}}' wx:key='{{index}}'>
+      <view class='item' animation='{{tapIndex_1==index?showAnimation_1:others}}'>
+        <view class='item_inside_left'>《{{item.bookName}}》 {{item.bookAuthor}}[著]</view>
+        <icon class='iconfont icon-delete' size='30' bindtap='checkDeleteSend' data-id='{{item._id}}' data-index='{{index}}'></icon>
+      </view>
+    </block>
+  </scroll-view>
+
+  <!--心愿列表-->
+  <view style='margin:20rpx 0 20rpx 20rpx;font-size:30rpx'>我的心愿：</view>
+  <scroll-view scroll-y class='myScroll'>
+    <block wx:for='{{mywish}}' wx:key='{{index}}'>
+      <view class='item' animation='{{tapIndex_2==index?showAnimation_2:others}}'>
+        <view class='item_inside_left'>《{{item.bookName}}》 {{item.bookAuthor}}[著]</view>
+        <icon class='iconfont icon-delete' size='30' data-id='{{item._id}}' data-index='{{index}}' bindtap='checkDeleteWish'></icon>
+      </view>
+    </block>
+  </scroll-view>
+</view>

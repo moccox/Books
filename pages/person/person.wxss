@@ -1,0 +1,82 @@
+/* pages/person/person.wxss */
+
+/*上半部分背景*/
+.bg_top{
+  width: 100%;
+  height: 30%;
+  display: flex;
+  background-image: url('data:image/png;base64,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');
+  flex-direction: column;
+  align-items: center;
+}
+
+/*下半部分背景*/
+.bg_bottom{
+  width: 100%;
+  height: 70%;
+  background-color: rgb(224,224,224);
+  display: flex;
+  flex-direction: column;
+}
+
+/*获取登录授权按钮*/
+.loginbt{
+  width: 180rpx;
+  height: 80rpx;
+  background: #fff;
+  display: flex;
+  margin-top: 100rpx;
+}
+
+/*放置用户名区域*/
+.name{
+  width: 300rpx;
+  height: 80rpx;
+  background-color: transparent;
+  color: #fff;
+  display: flex;
+  margin-top: 100rpx;
+}
+
+/*放置个人信息子列表区域*/
+.personalView{
+  width: 98%;
+  height: 248rpx;
+  background-color: #ccc;
+  display: flex;
+  flex-direction: column;
+  margin: 0 1% 0 1%;
+  transition: height 0.5s;
+}
+/*放置个人信息子列表区域-隐藏*/
+.personalView_hidden{
+  width: 100%;
+  height: 0;
+  background-color: #ccc;
+  display: flex;
+  flex-direction: column;
+  margin: 0 2% 0 2%;
+  transition: height 200ms;
+}
+
+/*tap*/
+.myTap{
+  width: 100%;
+  height: 80rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+}
+
+/*标签（大）*/
+.myLab_one{
+  color: #1995f4;
+  margin:2% 10rpx 2% 30rpx;
+}
+
+/*标签（小）*/
+.myLab_two{
+  color: #aaa;
+  font-size: 40rpx;
+  margin:2% 10rpx 2% 30rpx;
+}

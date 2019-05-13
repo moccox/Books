@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/book/book",
+    "pages/wish/wish",
+    "pages/person/person",
+    "pages/setting/setting",
+    "pages/detail/detail",
+    "pages/search/search",
+    "pages/mybk/mybk",
+    "pages/myms/myms"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1995f4",
+    "navigationBarTitleText": "赠书系统",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首 页",
+        "iconPath": "images/tabIcon_index.png",
+        "selectedIconPath": "images/tabIcon_index_selected.png"
+      },
+      {
+        "pagePath": "pages/book/book",
+        "text": "赠 书",
+        "iconPath": "images/tabIcon_book.png",
+        "selectedIconPath": "images/tabIcon_book_selected.png"
+      },
+      {
+        "pagePath": "pages/wish/wish",
+        "text": "许 愿",
+        "iconPath": "images/tabIcon_wish.png",
+        "selectedIconPath": "images/tabIcon_wish_selected.png"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "text": "个人中心",
+        "iconPath": "images/tabIcon_person.png",
+        "selectedIconPath": "images/tabIcon_person_selected.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "小程序将获取你的位置信息"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

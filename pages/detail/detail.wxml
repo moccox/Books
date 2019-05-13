@@ -1,0 +1,34 @@
+<!--pages/detail/detail.wxml-->
+<view class='background'>
+  <!--标题-->
+  <view class='title'>
+    <text style='margin-top:10rpx;font-size:38rpx;font-weight:900'>{{flag==0?'赠':'收'}}书详情</text>
+  </view>
+  <!--收书模式-->
+  <view class='{{(flag==0)?"getBook":"hidden"}}'>
+    <!--封面区域-->
+    <view class='bookCover'>
+    <image class='myImage' src='{{message.bookCover}}'></image>
+    </view>
+    <!--信息区域-->
+    <view style='width:50%;height:400rpx;display:flex;flex-direction:column;margin-left:3%'>
+      <text style='text-size:60rpx;color:#333;margin:20rpx 10rpx 20rpx 10rpx'>书名：《{{message.bookName}}》</text>
+      <text style='text-size:40rpx;color:#333;margin:20rpx 10rpx 20rpx 10rpx'>作者：{{message.bookAuthor}}</text>
+      <!--收书按钮-->
+      <button class='getBt_normal' bindtap='addMail' hover-class='getBt_pressed'>我要此书</button>
+    </view>
+  </view>
+
+  <!--送书模式-->
+  <view class='{{(flag==1)?"achieveWish":"hidden"}}'>
+    <!--信息区域-->
+    <view class='bookMessages'>书名：《{{message.bookName}}》</view>
+    <view class='bookMessages'>作者：{{message.bookAuthor}}</view>
+    <view class='bookMessages'>本书悬赏 {{message.reward}} 爱心值</view>
+    <view class='bookMessages'>对方收书地址：{{message.aimAddress}}</view>
+    <!--送书按钮-->
+    <view style='width:100%;margin-top:30rpx;display:flex'>
+      <button class='sendBt_normal' bindtap='checkSend' hover-class='sendBt_pressed'>送书给ta </button>
+    </view>
+  </view>
+</view>

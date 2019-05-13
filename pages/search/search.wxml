@@ -1,0 +1,44 @@
+<!--pages/search/search.wxml-->
+<view class='background'>
+  <!--根据书名搜索-->
+  <view style='margin:10rpx 0 0 10rpx;font-size:30rpx'>根据书名查找到与"{{searchCnotent}}"相关的内容如下：</view>
+  <scroll-view class='myScroll' scroll-y>
+    <!--送书列表-->
+    <block wx:for='{{sendByBook}}' wx:key='{{index}}'>
+      <view class='item' data-id='{{item._id}}' bindtap='getBook'>
+        <text style='margin-top:20rpx'>用户 {{item.sender}}</text>
+        <text style='margin-top:20rpx'>想送一本《{{item.bookName}}》</text>
+        <text style='margin-top:20rpx'>作者：{{item.bookAuthor}}</text>
+      </view>
+    </block>
+    <!--收书列表-->
+    <block wx:for='{{wishByBook}}' wx:key='{{index}}'>
+      <view class='item' data-id='{{item._id}}' bindtap='sendBook'>
+        <text style='margin-top:20rpx'>用户 {{item.wisher}}</text>
+        <text style='margin-top:20rpx'>想收一本《{{item.bookName}}》</text>
+        <text style='margin-top:20rpx'>作者：{{item.bookAuthor}}</text>
+      </view>
+    </block>
+  </scroll-view>
+
+  <!--根据作者搜索-->
+  <view style='margin:10rpx 0 0 10rpx;font-size:30rpx'>根据作者查找到与"{{searchCnotent}}"相关的内容如下：</view>
+  <scroll-view class='myScroll' scroll-y>
+    <!--送书列表-->
+    <block wx:for='{{sendByAuthor}}' wx:key='{{index}}'>
+      <view class='item' data-id='{{item._id}}' bindtap='getBook'>
+        <text style='margin-top:20rpx'>用户 {{item.sender}}</text>
+        <text style='margin-top:20rpx'>想送一本《{{item.bookName}}》</text>
+        <text style='margin-top:20rpx'>作者：{{item.bookAuthor}}</text>
+      </view>
+    </block>
+    <!--收书列表-->
+    <block wx:for='{{wishByAuthor}}' wx:key='{{index}}'>
+      <view class='item' data-id='{{item._id}}' bindtap='sendBook'>
+        <text style='margin-top:20rpx'>用户 {{item.wisher}}</text>
+        <text style='margin-top:20rpx'>想收一本《{{item.bookName}}》</text>
+        <text style='margin-top:20rpx'>作者：{{item.bookAuthor}}</text>
+      </view>
+    </block>
+  </scroll-view>
+</view>

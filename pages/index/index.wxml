@@ -1,0 +1,72 @@
+<scroll-view scroll-y bindscroll='scroll' scroll-top="{{top}}" style='height:1200rpx'>
+  <!-- 搜索栏 -->
+  <view class='searchingbar'>
+      <button class="{{searchFlag?'searchingbt':'searchingbt_hidden'}}" bindtap='changeSearchFlag'>搜索</button>
+      <view class="{{searchFlag?'searchingbar_inside_hidden':'searchingbar_inside'}}">
+        <icon class='iconfont icon-search' style='margin-left:20rpx;color:#1995f4'></icon>
+        <input class='myInput' style='height:30rpx;background-color:#eee' bindinput='changeInputVal' confirm-type='search' bindconfirm='startSearching'></input>
+        <button class='minibt' bindtap='startSearching'>搜索</button>
+        <button class='minibt' bindtap='changeSearchFlag'>取消</button>
+      </view>
+  </view>
+
+  <!-- 定位栏 -->
+  <view class='locationbar'>
+    <icon class="{{locatedFlag?'iconfont icon-location_true':'iconfont icon-location_false'}}" bindtap='getLocation' style='color:#fff'></icon>
+    <label class='myLab'>{{locatedFlag?location.province+" "+location.city:"暂未获得定位，请点击左边图标获取定位"}}</label>
+  </view>
+  
+  <!--广告/公告栏-->
+  <view class='adbar'>
+    <swiper class='adSwiper' indicator-dots='true' indicator-color='#ccc' indicator-active-color='#1995f4' autoplay='true' interval='3000' duration='1000' circular='true'>
+      <block wx:for="{{i}}" wx:key="{{index}}">
+        <swiper-item>
+         <image src='../../images/advertise_{{index}}.png' class='myImage'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!-- 导航栏 -->
+  <view class="{{top>=170?'navigationbar_top':'navigationbar'}}">
+    <block wx:for="{{navbarTitle}}" wx:key="index">
+      <view class="navbarItem {{index == navbarActiveIndex ? 'navbarItem_active' : ''}}" id="{{index}}" catchtap="navbarTapClick">
+        <view class="weui-navbar__title">{{item}}</view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 项目页 -->
+  <view class='scrollView'>
+    <swiper current='{{navbarActiveIndex}}' bindanimationfinish='onBindAnimationFinish' class='swiperView'>
+      <!--双层循环嵌套可为两层循环的下标命名-->
+      <swiper-item wx:for="{{navbarTitle}}" wx:for-index='id_1' wx:key="index">
+        <scroll-view scroll-y style='height:1000rpx'>
+          <!--赠书、收书页面-->
+          <block wx:for='{{books[id_1]}}' wx:if='{{(id_1!=2)}}' wx:for-index='id_2' wx:key='index'>
+            <!--单击事件绑定：取书/赠书-->
+            <!--将赠书/心愿的id保存到数据集，用于携带数据跳转页面-->
+            <view class='books_item' bindtap='{{(id_1==0)?"getBook":"achieveWish"}}' data-id='{{item._id}}'>
+              <view class='books_item_inside' style='margin-top:20rpx'>用户 {{(id_1==0)?item.sender:item.wisher}}</view>
+              <view class='books_item_inside'>{{aimClass[id_1]}}《{{item.bookName}}》</view>
+              <view class='books_item_inside'>作者：{{item.bookAuthor}}</view>
+              <view wx:if='{{id_1==1}}'>悬赏：{{item.reward}}</view>
+            </view>
+          </block>
+          <!--附近页面-->
+          <block wx:for='{{nearby}}' wx:if='{{id_1==2}}' wx:key='index'>
+            <view class='books_item' style='height:200rpx'>
+              <view class='books_item_inside'>用户 {{item.userName}}</view>
+              <view class='books_item_inside'>与您同城,您可以向他送（收）书</view>
+            </view>
+          </block>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- 返回顶部按钮 -->
+  <view class="{{top>=170?'toTopView':'toTopView_hidden'}}">
+    <icon class='iconfont icon-totop' style='color:#222;margin-left:90%;margin-bottom:5%' bindtap='goToTop'></icon>
+  </view>
+</scroll-view>

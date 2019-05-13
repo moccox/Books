@@ -1,0 +1,20 @@
+<!--pages/setting/setting.wxml-->
+<view class='background'>
+  <label class='myLab'>取件/寄件地址:</label>
+  <label class='myLab'>{{address}}</label>
+  <label class='myLab'>联系方式：</label>
+  <label class='myLab'>{{phoneNum}}</label>
+
+  <button style='width:80%;height:80rpx;margin:10rpx 10% 10rpx 10%;background-color:#1995f4;color:#fff' bindtap='changeSFlag'>填写/更改信息</button>
+
+  <view class='myModal' wx:if='{{settingFlag==true}}'>
+    <form bindsubmit='submit'>
+      <label class='myLab'>取件/寄件地址:</label>
+      <input class='myInput' name='address'></input>
+      <label class='myLab'>联系方式：</label>
+      <input class='myInput' name='phoneNum'></input>
+      <button form-type='submit' style='background-color:#1995f4;width:90%;margin:30rpx 5% 10rpx 5%;color:#fff'>确定</button>
+      <button form-type='reset' style='width:90%;margin:20rpx 5% 10rpx 5%'>清空</button>
+    </form>
+  </view>
+</view>

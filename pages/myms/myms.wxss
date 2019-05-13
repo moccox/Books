@@ -1,0 +1,88 @@
+/* pages/myms/myms.wxss */
+/*背景*/
+.background{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/*标题*/
+.title{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 20rpx #444;
+}
+
+/*平分屏幕上下区域*/
+.myView{
+  width: 100%;
+  height: 500rpx;
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  border-bottom: 4rpx solid #444;
+}
+
+/*装饰栏*/
+.decoration{
+  width: 15%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #53a6ddd8;
+  border-right: 1rpx solid #444;
+  border-bottom: 4rpx solid #444;
+  box-shadow: 10rpx 0rpx 10rpx #777;
+}
+
+/*放置消息区域*/
+.myScroll{
+  width: 85%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+}
+
+/*消息*/
+.item{
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  border-bottom: 1rpx solid #444;
+  border-top: 1rpx solid #444;
+  margin-left: 10rpx;
+}
+
+/*消息区域左半部分*/
+.item_inside_left{
+  width: 90%;
+  height: 60rpx;
+  background-color: transparent;
+  font-size: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/*弹窗*/
+.myModal{
+  width: 560rpx;
+  height: 340rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  margin: 340rpx 100rpx 100rpx 80rpx;
+  z-index: 10;
+  border: 1rpx solid #bbb;
+  box-shadow: 10rpx 10rpx 30rpx #888;
+}
